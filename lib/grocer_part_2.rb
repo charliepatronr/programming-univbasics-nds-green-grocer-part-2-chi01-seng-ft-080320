@@ -1,9 +1,42 @@
 require_relative './part_1_solution.rb'
+require 'pry'
+  
+  #iterate through cart
+  #compare item : value with coupon item 
+  #subtract current item count with coupon num 
+  #if( count / num ) >= 1  
+  # then i modify cart item count to equal (count / num rounded down)  * num 
+  #add to cart item with item + discount 
+
+  # REMEMBER: This method **should** update cart
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  copy_item = nil
+  original_item_count=0
+  text= ' W/COUPON'
+  
+  pp coupons[0][:item]
+  # if(coupons.length>1)
+  # end 
+  
+  cart.each do |item|
+    coupons.each do |coupon|
+      if(item[:item] == coupon[:item] && item[:count] / coupon[:num] >=1)
+        original_item_count = item[:count]
+        item[:count] = item[:count] - (((item[:count] / coupon[:num]).floor) * coupons[0][:num])
+        copy_item = item.clone
+        copy_item[:count] = original_item_count - item[:count]
+        copy_item[:item] = copy_item[:item] + text
+        copy_item[:price] = coupon[:cost] / coupon[:num]
+        cart.push(copy_item)
+      end
+      else 
+        return cart
+      end 
+    end 
+  end 
+    cart
+
 end
 
 def apply_clearance(cart)
@@ -23,3 +56,7 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
 end
+
+
+
+
