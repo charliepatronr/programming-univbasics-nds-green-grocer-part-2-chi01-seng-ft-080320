@@ -55,6 +55,10 @@ def checkout(cart, coupons)
 end
 
 apply_coupons([{:item => "CHEESE", :price => 6.50, :clearance => false, :count => 4}
-], )
+], [
+      {:item => "AVOCADO", :num => 2, :cost => 5.00},
+      {:item => "BEER", :num => 2, :cost => 20.00},
+      {:item => "CHEESE", :num => 3, :cost => 15.00}
+    ])
 
 
