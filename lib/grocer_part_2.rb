@@ -17,8 +17,8 @@ def apply_coupons(cart, coupons)
   coupon_tot = 0
   
   pp coupons[0][:item]
-  # if(coupons.length>1)
-  # end 
+  if(coupons.length>1)
+  end 
   
   cart.each do |item|
     coupons.each do |coupon|
