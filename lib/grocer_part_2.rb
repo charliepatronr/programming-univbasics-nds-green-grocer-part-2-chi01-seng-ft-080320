@@ -54,6 +54,7 @@ def checkout(cart, coupons)
   # some irritated customers
 end
 
-apply_coupons()
+apply_coupons([{:item => "CHEESE", :price => 6.50, :clearance => false},
+])
 
 
