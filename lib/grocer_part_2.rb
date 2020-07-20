@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons)
       if(item[:item] == coupon[:item] && item[:count] / coupon[:num] >=1)
         original_item_count = item[:count]
         coupuon_tot = (item[:count] / coupon[:num]).floor
-        item[:count] = item[:count] - (((item[:count] / coupon[:num]).floor) * coupons[0][:num])
+        item[:count] = item[:count] - (((item[:count] / coupon[:num]).floor) * coupon[0][:num])
         copy_item = item.clone
         copy_item[:count] = original_item_count - item[:count]
         copy_item[:item] = copy_item[:item] + text
