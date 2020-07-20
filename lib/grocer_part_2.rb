@@ -54,6 +54,6 @@ def checkout(cart, coupons)
   # some irritated customers
 end
 
-
+apply_coupons()
 
 
