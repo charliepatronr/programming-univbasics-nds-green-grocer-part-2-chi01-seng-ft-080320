@@ -30,9 +30,6 @@ def apply_coupons(cart, coupons)
         copy_item[:price] = coupon[:cost] / coupon[:num]
         cart.push(copy_item)
       end
-      else 
-        return cart
-      end 
     end 
   end 
     cart
