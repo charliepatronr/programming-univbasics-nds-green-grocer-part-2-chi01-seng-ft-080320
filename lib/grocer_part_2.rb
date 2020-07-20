@@ -18,22 +18,27 @@ def apply_coupons(cart, coupons)
   
   pp coupons[0][:item]
   if(coupons.length>1)
+    cart.each do |item|
+      coupons.each do |coupon|
+        if(item[:item] == coupon[:item] && item[:count] / coupon[:num] >=1)
+          original_item_count = item[:count]
+          coupuon_tot = (item[:count] / coupon[:num]).floor
+          item[:count] = item[:count] - (((item[:count] / coupon[:num]).floor) * coupon[:num])
+          copy_item = item.clone
+          copy_item[:count] = original_item_count - item[:count]
+          copy_item[:item] = copy_item[:item] + text
+          copy_item[:price] = coupon[:cost] / coupon[:num]
+          cart.push(copy_item)
+        end
+      end 
+    end 
+  
+  
+  
+  
   end 
   
-  cart.each do |item|
-    coupons.each do |coupon|
-      if(item[:item] == coupon[:item] && item[:count] / coupon[:num] >=1)
-        original_item_count = item[:count]
-        coupuon_tot = (item[:count] / coupon[:num]).floor
-        item[:count] = item[:count] - (((item[:count] / coupon[:num]).floor) * coupon[:num])
-        copy_item = item.clone
-        copy_item[:count] = original_item_count - item[:count]
-        copy_item[:item] = copy_item[:item] + text
-        copy_item[:price] = coupon[:cost] / coupon[:num]
-        cart.push(copy_item)
-      end
-    end 
-  end 
+
   pp cart
 
 end
