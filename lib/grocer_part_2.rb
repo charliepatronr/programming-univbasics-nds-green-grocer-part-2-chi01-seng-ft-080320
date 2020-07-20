@@ -31,6 +31,7 @@ def apply_coupons(cart, coupons)
         copy_item[:item] = copy_item[:item] + text
         copy_item[:price] = coupon[:cost] / coupon[:num]
         cart.push(copy_item)
+        binding.pry
       end
     end 
   end 
