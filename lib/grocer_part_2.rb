@@ -15,9 +15,7 @@ def apply_coupons(cart, coupons)
   original_item_count=0
   text= ' W/COUPON'
   coupon_tot = 0
-  
-  pp coupons[0][:item]
-  if(coupons.length >= 1)
+    if(coupons.length >= 1)
     cart.each do |item|
       coupons.each do |coupon|
         if(item[:item] == coupon[:item] && item[:count] / coupon[:num] >=1)
