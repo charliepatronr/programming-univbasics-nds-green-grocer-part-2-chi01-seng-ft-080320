@@ -49,6 +49,7 @@ def checkout(cart, coupons)
   apply_clearance(new_consolidated)
   
   new_consolidated.each do |item|
+    tot += (item[:count] * item[:price])
     binding.pry
   end 
   
