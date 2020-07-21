@@ -46,6 +46,7 @@ def checkout(cart, coupons)
   
   new_consolidated = consolidate_cart(cart)
   apply_coupons =(new_consolidated)
+  apply_clearance(new_consolidated)
   # Consult README for inputs and outputs
   #
   # This method should call
