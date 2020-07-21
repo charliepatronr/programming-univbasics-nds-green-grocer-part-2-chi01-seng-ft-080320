@@ -54,16 +54,7 @@ def checkout(cart, coupons)
   end 
   if(tot > 100)
     tot = (tot * 0.9).round(2)
-  end 
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  end
   tot
 end
 
