@@ -51,6 +51,7 @@ def checkout(cart, coupons)
   
   new_consolidated.each do |item|
     tot += (item[:count] * item[:price])
+    item_count += item[:count]
   end 
   
   # Consult README for inputs and outputs
