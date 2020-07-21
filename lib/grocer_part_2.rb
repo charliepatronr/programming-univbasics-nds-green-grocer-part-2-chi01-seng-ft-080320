@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   apply_clearance(new_consolidated)
   
   new_consolidated.each do |item|
-    
+    binding.pry
   end 
   
   # Consult README for inputs and outputs
