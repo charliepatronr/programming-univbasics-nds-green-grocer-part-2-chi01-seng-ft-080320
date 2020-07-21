@@ -52,7 +52,9 @@ def checkout(cart, coupons)
   new_consolidated.each do |item|
     tot += (item[:count] * item[:price])
   end 
-  if(item_count)
+  if(tot > 100)
+    tot = tot * 0.9
+  end 
   # Consult README for inputs and outputs
   #
   # This method should call
