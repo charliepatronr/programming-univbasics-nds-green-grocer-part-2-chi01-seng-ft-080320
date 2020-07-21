@@ -44,16 +44,16 @@ end
 
 def checkout(cart, coupons)
   tot = 0
-  item_count = 0
+
   new_consolidated = consolidate_cart(cart)
   apply_coupons(new_consolidated, coupons)
   apply_clearance(new_consolidated)
   
   new_consolidated.each do |item|
     tot += (item[:count] * item[:price])
-    item_count += item[:count]
+
   end 
-  
+  if(item_count)
   # Consult README for inputs and outputs
   #
   # This method should call
